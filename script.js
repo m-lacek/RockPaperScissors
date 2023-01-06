@@ -2,12 +2,18 @@ function getComputerChoice() {
     let choice = Math.floor((Math.random() * 3)) + 1;
     console.log(choice);
     if (choice == 1) {
-        return "Rock"
+        return "rock"
     }
     else if (choice == 2) {
-        return "Paper"
+        return "paper"
     }
     else {
-        return "Scissors"
+        return "scissors"
     }
+}
+
+function oneRound(computerSelection, playerSelection) {
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("Rock, Paper, or Scissors?")
+    playerSelection = playerSelection.toLowerCase();
 }
