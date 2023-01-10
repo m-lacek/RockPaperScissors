@@ -16,9 +16,9 @@ function getComputerChoice() {
     }
 }
 
-function oneRound(computerSelection, playerSelection) {
-    computerSelection = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?")
+function oneRound() {
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Rock, Paper, or Scissors?")
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
         return "Invalid entry. Rock, Paper, or Scissors are the only valid entries."
@@ -81,4 +81,7 @@ function game() {
         let result = oneRound();
         console.log(result);
     }
+    playerScore = 0;
+    compScore = 0;
+    tieCount = 0;
 }
