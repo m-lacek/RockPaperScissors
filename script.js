@@ -16,13 +16,8 @@ function getComputerChoice() {
     }
 }
 
-function oneRound() {
+function oneRound(playerSelection) {
     let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Rock, Paper, or Scissors?")
-    playerSelection = playerSelection.toLowerCase();
-    if (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
-        return "Invalid entry. Rock, Paper, or Scissors are the only valid entries."
-    }
     if (computerSelection === "rock") {
         if (playerSelection === "rock") {
             console.log("Tie!");
@@ -77,11 +72,14 @@ function oneRound() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let result = oneRound();
-        console.log(result);
-    }
-    playerScore = 0;
-    compScore = 0;
-    tieCount = 0;
+    const btns = document.querySelectorAll('button');
+    btns.forEach((button) => {
+        button.addEventListener('click', () => {
+            oneRound(button.id)
+        });
+    });
 }
+
+window.onload = function () {
+    game();
+};
