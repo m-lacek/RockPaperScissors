@@ -18,55 +18,57 @@ function getComputerChoice() {
 
 function oneRound(playerSelection) {
     let computerSelection = getComputerChoice();
+    const score = document.querySelector("#score");
+    const result = document.querySelector("#result");
     if (computerSelection === "rock") {
         if (playerSelection === "rock") {
-            console.log("Tie!");
+            result.textContent = "Tie!";
             tieCount += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "paper") {
-            console.log("You win! Paper beats rock");
+            result.textContent = "You win! Paper beats rock";
             playerScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "scissors") {
-            console.log("You lose! Rock beats paper");
+            result.textContent = "You lose! Rock beats paper";
             compScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
     }
     if (computerSelection === "paper") {
         if (playerSelection === "rock") {
-            console.log("You lose! Paper beats rock");
+            result.textContent = "You lose! Paper beats rock";
             compScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "paper") {
-            console.log("Tie!");
+            result.textContent = "Tie!";
             tieCount += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "scissors") {
-            console.log("You win! scissors beats paper");
+            result.textContent = "You win! scissors beats paper";
             playerScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
     }
     if (computerSelection === "scissors") {
         if (playerSelection === "rock") {
-            console.log("You win! Rock beats scissors");
+            result.textContent = "You win! Rock beats scissors";
             playerScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "paper") {
-            console.log("You lose! scissors beats paper");
+            result.textContent = "You lose! scissors beats paper";
             compScore += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
         else if (playerSelection === "scissors") {
-            console.log("Tie!");
+            result.textContent = "Tie!";
             tieCount += 1;
-            console.log("Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount)
+            score.textContent = "Computer: " + compScore + " Player: " + playerScore + " Tie: " + tieCount;
         }
     }
 }
