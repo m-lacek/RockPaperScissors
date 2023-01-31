@@ -74,11 +74,30 @@ function oneRound(playerSelection) {
 }
 
 function game() {
-    const btns = document.querySelectorAll('button');
+    const btns = document.querySelectorAll('.choices');
+    const end = document.querySelector("#end");
+    const reset = document.querySelector("#reset");
     btns.forEach((button) => {
         button.addEventListener('click', () => {
             oneRound(button.id)
+            if (playerScore == 5) {
+                end.textContent = "You win!";
+                playerScore = 0;
+                compScore = 0;
+                tieCount = 0;
+            }
+            if (compScore == 5) {
+                end.textContent = "Computer wins. You lose.";
+                playerScore = 0;
+                compScore = 0;
+                tieCount = 0;
+            }
         });
+    });
+    reset.addEventListener('click', () => {
+        playerScore = 0;
+        compScore = 0;
+        tieCount = 0;
     });
 }
 
