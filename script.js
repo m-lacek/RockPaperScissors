@@ -77,27 +77,26 @@ function game() {
     const btns = document.querySelectorAll('.choices');
     const end = document.querySelector("#end");
     const reset = document.querySelector("#reset");
+
     btns.forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', function test() {
             oneRound(button.id)
             if (playerScore == 5) {
                 end.textContent = "You win!";
-                playerScore = 0;
-                compScore = 0;
-                tieCount = 0;
+                button.removeEventListener('click', test);
             }
             if (compScore == 5) {
                 end.textContent = "Computer wins. You lose.";
+                button.removeEventListener('click', test);
+            }
+            reset.addEventListener('click', () => {
                 playerScore = 0;
                 compScore = 0;
                 tieCount = 0;
-            }
+                button.addEventListener('click', test);
+                end.textContent = ""
+            });
         });
-    });
-    reset.addEventListener('click', () => {
-        playerScore = 0;
-        compScore = 0;
-        tieCount = 0;
     });
 }
 
